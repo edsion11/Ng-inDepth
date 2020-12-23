@@ -1,0 +1,9 @@
+<!--<app-a [value]="value" (subscribe)="subscribe($event)" ></app-a>-->
+<!--<app-a [value]="emailService.value$ | async" (subscribe)="subscribe($event)" ></app-a>-->
+<app-a (subscribe)="subscribe($event)" ></app-a>
+<br>
+<button nz-button nzType="primary" (click)="changeName()">ChangeName</button>
+&nbsp;
+<button nz-button nzType="primary" (click)="changeElement()">changeElement</button>
+<p id="p1">{{element}}</p>
+
