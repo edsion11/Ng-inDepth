@@ -27,6 +27,8 @@ import { TabeComponent } from './onPush/tabe/tabe.component';
 import { RouterAComponent } from './router-a/router-a.component';
 import { RouterBComponent } from './router-a/router-b/router-b.component';
 import { RouterCComponent } from './router-c/router-c.component';
+import { SwiperComponent } from './consumer/swiper/swiper.component';
+import { ConsumerComponent } from './consumer/consumer.component';
 
 registerLocaleData(zh);
 
@@ -46,6 +48,8 @@ registerLocaleData(zh);
     RouterAComponent,
     RouterBComponent,
     RouterCComponent,
+    SwiperComponent,
+    ConsumerComponent,
   ],
   imports: [
     TemplateModule,
