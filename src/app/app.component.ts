@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {AComponent} from './a/a.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +6,17 @@ import {AComponent} from './a/a.component';
 })
 export class AppComponent {
   value?: string;
+  icon = 'a';
   constructor() {
   }
-
+  onNewValue(value): void{
+    console.log(value);
+  }
+  get classes() {
+    const cssClasses = {
+      fa: true
+    };
+    cssClasses['fa-' + this.icon] = true;
+    return cssClasses;
+  }
 }

@@ -1,0 +1,13 @@
+:host ::ng-deep input {
+  border: none;
+  outline: none;
+  height: 20px;
+}
+
+:host {
+  border: 3px solid grey;
+}
+
+:host(.focus) {
+  border: 3px solid blue;
+}

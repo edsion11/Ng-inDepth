@@ -1,10 +1,18 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-tab-a',
-  templateUrl: ``,
+  template: `
+        <p style="padding: 10px;background-color: antiquewhite;margin: 2px;">{{todo.title}} - {{runChangeDetection}}</p>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AComponent {
+export class TabaComponent {
+  @Input() todo;
+  // tslint:disable-next-line:typedef
+  get runChangeDetection(){
+    console.log('TabAComponent Checking');
+    return true;
+  }
   constructor() { }
 }
