@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {slides} from './swiper/data';
+import {slides} from './data'
 
 @Component({
   selector: 'app-consumer',

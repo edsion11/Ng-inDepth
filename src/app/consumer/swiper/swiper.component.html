@@ -1,9 +1,9 @@
 <div class="swiper">
-  <div class="slider">
-    <div class="slide" *ngFor=" let slide of slides">
-      <img [src] = "slide" />
+    <div class="slider">
+      <div class="slide" *ngFor=" let slide of slides">
+        <img [src] = "slide" />
+      </div>
     </div>
+    <button class="next" nzType="primary" nz-button nzSize="large" (click)="slide(+1)">next</button>
+    <button class="prev" nzType="primary" nz-button nzSize="large" (click)="slide(-1)">prev</button>
   </div>
-  <button class="next" nzType="primary" nz-button nzSize="default" (click)="slide(+1)">next</button>
-  <button class="prev" nzType="primary" nz-button nzSize="default" (click)="slide(-1)">prev</button>
-</div>

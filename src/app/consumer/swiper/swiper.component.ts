@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Inject, Input} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 @Component({
   selector: 'app-swiper',
@@ -6,10 +6,9 @@ import {DOCUMENT} from '@angular/common';
   styleUrls: ['./swiper.component.scss']
 })
 export class SwiperComponent implements AfterViewInit {
-
-
-  @Input() slides: string[];
-  slidePositions: number[];
+  constructor(@Inject(DOCUMENT) private Document: Document) { }
+  @Input() slides!: string[];
+  slidePositions!: number[];
   currentIndex = 0;
   slide(direction: number): void{
     this.currentIndex += direction;
@@ -19,16 +18,15 @@ export class SwiperComponent implements AfterViewInit {
     if (this.currentIndex > this.slidePositions.length){
       this.currentIndex = 0;
     }
-    this.Document.querySelector('.slider').scrollTo({
+    this.Document.querySelector('.slider')!.scrollTo({
       left: this.slidePositions[this.currentIndex],
       behavior: 'smooth'
     });
   }
-  constructor(@Inject(DOCUMENT) private Document: Document) { }
   private getSlidePosition(): void {
      this.slidePositions = [];
-     this.Document.querySelectorAll('.slide').forEach((div: HTMLElement) => {
-        this.slidePositions.push(div.offsetLeft);
+     this.Document.querySelectorAll('.slide').forEach((div: Element) => {
+        this.slidePositions.push((div as HTMLElement).offsetLeft);
      });
   }
   ngAfterViewInit(): void {
