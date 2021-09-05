@@ -22,6 +22,8 @@ import { TabbComponent } from './onpush/component-group/tabb.component';
 import { TabcComponent } from './onpush/component-group/tabc.component';
 import { TabdComponent } from './onpush/component-group/tabd.component';
 import { TabeComponent } from './onpush/tabe/tabe.component';
+import { IvyComponent } from './ivy/ivy.component';
+import { ChildComponent } from './ivy/child/child.component';
 
 registerLocaleData(zh);
 
@@ -38,7 +40,9 @@ registerLocaleData(zh);
     TabaComponent,
     TabbComponent,
     TabcComponent,
-    TabdComponent
+    TabdComponent,
+    IvyComponent,
+    ChildComponent
   ],
   imports: [
     NzIconModule,
